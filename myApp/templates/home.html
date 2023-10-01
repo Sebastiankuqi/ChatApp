@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+  background-color: #927e7e; /* Light gray background */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  border: 2px solid #e1e1e1; /* Light gray border */
+  background-color: #fff; /* White background */
+  border-radius: 50px;
+  padding: 80px; /* Increased padding for better spacing */
+  margin: 20px 0; /* Increased margin for better spacing */
+  box-shadow: 10px 20px 80px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+h2 {
+  color: #000000; /* Instagram blue */
+  
+}
+
+input[type="text"],
+select,
+input[type="submit"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #405de6; /* Instagram blue */
+  color: #fff; /* White text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #364db9; /* Darker blue on hover */
+}
+</style>
+</head>
+<body>
+
+<div align="center">
+    <h2>Chat</h2>
+</div>
+
+<div class="container">
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label>Room Name</label>
+        <input type="text" name="room_name" id="room_name" />
+        <label>Username</label>
+        <input type="text" name="username" id="username" />
+        <input type="submit" value="Enter Room">
+    </form>
+</div>
+
+</body>
+</html>
